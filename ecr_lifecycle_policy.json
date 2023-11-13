@@ -1,0 +1,29 @@
+{
+    "rules": [
+        {
+            "rulePriority": 1,
+            "description": "Keep only one untagged image, expire all others",
+            "selection": {
+                "tagStatus": "untagged",
+                "countType": "imageCountMoreThan",
+                "countNumber": 1
+            },
+            "action": {
+                "type": "expire"
+            }
+        },
+        {
+            "rulePriority": 2,
+            "description": "Keep five tagged image, expire all others",
+            "selection": {
+                "tagStatus": "tagged",
+                "tagPrefixList": ["prod", "pd"],
+                "countType": "imageCountMoreThan",
+                "countNumber": 5
+            },
+            "action": {
+                "type": "expire"
+            }
+        }
+    ]
+}

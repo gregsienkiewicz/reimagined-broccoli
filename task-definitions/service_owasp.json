@@ -1,0 +1,32 @@
+[
+    {
+        "name": "owasp-js",
+        "essential": true,
+        "image": "018857050180.dkr.ecr.us-east-1.amazonaws.com/owasp:latest",
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/owasp",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "owasp"
+            }
+        },
+        "portMappings": [
+            {
+                "containerPort": 3000,
+                "hostPort": 3000,
+                "protocol": "tcp"
+            }
+        ],
+        "healthCheck": {
+            "retries": 3,
+            "command": [
+                "CMD-SHELL",
+                "curl -f http://localhost:3000/ || exit 1"
+            ],
+            "timeout": 5,
+            "interval": 30,
+            "startPeriod": null
+        }
+    }
+]
