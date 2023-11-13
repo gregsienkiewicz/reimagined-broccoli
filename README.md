@@ -2,6 +2,8 @@
 
 OWASP Ottawa November 2023 presentation **DevSecOps: containers, vulnerabilities and SCA**
 
+Terraforms AWS resources for containerized [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) on ECS, with image in private ECR.
+
 ## -!-IMPORTANT-!- Initial Manual Setup Steps
 
 Before using GitHub Actions to manage any changes, the S3 and DynamoDB resources have to be manually initialized. 
