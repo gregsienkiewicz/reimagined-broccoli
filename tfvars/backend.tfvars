@@ -1,0 +1,5 @@
+bucket               = "terraform-state-8c256417-1822-44df-afbd-613c7097c0e9"
+key                  = "terraform.tfstate"
+workspace_key_prefix = "tf-workspace"
+dynamodb_table       = "terraform-state-lock-8c256417-1822-44df-afbd-613c7097c0e9"
+region               = "us-east-1"
