@@ -17,6 +17,15 @@ jobs:
   plan:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        workspace: [backend]
+        backend-tfvars: [tfvars/backend.tfvars]
+
+    env:
+      TF_WORKSPACE: ${{ matrix.workspace }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
@@ -35,7 +44,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
-    
+
+      - name: AWS STS Get Caller Identity
+        run: aws sts get-caller-identity
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
@@ -46,7 +58,7 @@ jobs:
       
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -backend-config=${{ matrix.backend-tfvars }}
       
       - name: Terraform Validate
         id: validate
@@ -54,7 +66,7 @@ jobs:
       
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform plan -no-color -var-file=${{ matrix.backend-tfvars }}
         continue-on-error: true
       
       - uses: actions/github-script@v6
