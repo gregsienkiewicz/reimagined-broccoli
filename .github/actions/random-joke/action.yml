@@ -1,0 +1,8 @@
+name: 'Random Joke'
+description: 'Random Chuck Norris joke to brighten up the Workflow.'
+outputs:
+  random-joke:
+    description: 'The random Chuck Norris joke'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

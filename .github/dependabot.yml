@@ -7,7 +7,7 @@ updates:
     schedule:
       interval: "weekly"
     reviewers:
-      - "rewindio/devops"
+      - "gregsienkiewicz"
     labels:
       - "appsec"
     open-pull-requests-limit: 10

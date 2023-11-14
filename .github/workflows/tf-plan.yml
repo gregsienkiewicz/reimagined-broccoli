@@ -50,6 +50,9 @@ jobs:
       - name: AWS STS Get Caller Identity
         run: aws sts get-caller-identity
 
+      - name: Chuck Norris Joke
+        uses: ./.github/actions/random-joke
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
