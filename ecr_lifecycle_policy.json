@@ -17,7 +17,7 @@
             "description": "Keep five tagged image, expire all others",
             "selection": {
                 "tagStatus": "tagged",
-                "tagPrefixList": ["prod", "pd"],
+                "tagPrefixList": ["sha-", "v"],
                 "countType": "imageCountMoreThan",
                 "countNumber": 5
             },
