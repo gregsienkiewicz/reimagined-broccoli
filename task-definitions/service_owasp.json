@@ -2,7 +2,7 @@
     {
         "name": "owasp-js",
         "essential": true,
-        "image": "018857050180.dkr.ecr.us-east-1.amazonaws.com/owasp:latest",
+        "image": "040546586270.dkr.ecr.us-east-1.amazonaws.com/owasp:1.0",
         "logConfiguration": {
             "logDriver": "awslogs",
             "options": {
