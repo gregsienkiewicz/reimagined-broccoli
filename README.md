@@ -1,8 +1,8 @@
 # reimagined-broccoli
 
-[![Checkov](https://github.com/gregsienkiewicz/reimagined-broccoli/actions/workflows/checkov.yml/badge.svg?branch=main)](https://github.com/gregsienkiewicz/reimagined-broccoli/actions/workflows/checkov.yml)
+[![Terrascan](https://github.com/gregsienkiewicz/reimagined-broccoli/actions/workflows/terrascan.yml/badge.svg?branch=main)](https://github.com/gregsienkiewicz/reimagined-broccoli/actions/workflows/terrascan.yml)
 
-OWASP Ottawa November 2023 presentation **DevSecOps: containers, vulnerabilities and SCA**
+OWASP Ottawa November 2023 presentation **DevSecOps: containers, vulnerabilities and SCA**. Recording of the presentation on [YouTube - OWASP Ottawa](https://www.youtube.com/watch?v=f-4tFk0ouKc).
 
 Terraforms AWS resources for containerized [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) on ECS, with image in private ECR.
 
